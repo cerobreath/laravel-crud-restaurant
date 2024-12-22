@@ -10,3 +10,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Restaurant pages
+Route::get('/management', function (){
+    return view('management.index');
+});
+Route::resource('/management/category','\App\Http\Controllers\Management\CategoryController');
