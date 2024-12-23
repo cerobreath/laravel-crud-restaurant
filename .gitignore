@@ -10,4 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/idea
+.idea
+*.iws
+*.iml
+*.ipr
+.vscode/
