@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Cashier;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Menu;
-use App\Models\Table;
-use App\Models\Sale;
-use App\Models\SaleDetail;
 use Illuminate\Http\Request;
+use App\Table;
+use App\Category;
+use App\Menu;
+use App\Sale;
+use App\SaleDetail;
 use Illuminate\Support\Facades\Auth;
 
 class CashierController extends Controller
@@ -23,8 +23,8 @@ class CashierController extends Controller
         $html = '';
         foreach($tables as $table){
             $html .= '<div class="col-md-2 mb-4">';
-            $html .=
-                '<button class="btn btn-primary btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
+            $html .= 
+            '<button class="btn btn-primary btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
             <img class="img-fluid" src="'.url('/images/table.svg').'"/>
             <br>';
             if($table->status == "available"){
@@ -52,7 +52,7 @@ class CashierController extends Controller
                     $'.number_format($menu->price).'
                 </a>
             </div>
-
+            
             ';
         }
         return $html;
@@ -95,7 +95,7 @@ class CashierController extends Controller
         $sale->save();
 
         $html = $this->getSaleDetails($sale_id);
-        return $html; //testing
+        return $html; //testing 
     }
 
     public function getSaleDetailsByTable($table_id){
@@ -108,7 +108,7 @@ class CashierController extends Controller
             $html .= "Not Found Any Sale Details for the Selected Table";
         }
         return $html;
-
+        
     }
 
     private function getSaleDetails($sale_id){
@@ -130,7 +130,7 @@ class CashierController extends Controller
         <tbody>';
         $showBtnPayment = true;
         foreach($saleDetails as $saleDetail){
-
+          
             $html .= '
             <tr>
                 <td>'.$saleDetail->menu_id.'</td>
@@ -138,12 +138,12 @@ class CashierController extends Controller
                 <td>'.$saleDetail->quantity.'</td>
                 <td>'.$saleDetail->menu_price.'</td>
                 <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>';
-            if($saleDetail->status == "noConfirm"){
-                $showBtnPayment = false;
-                $html .= '<td><a data-id="'.$saleDetail->id.'" class="btn btn-danger btn-delete-saledetail"><i class="far fa-trash-alt"></a></td>';
-            }else{ // status == "confirm"
-                $html .= '<td><i class="fas fa-check-circle"></i></td>';
-            }
+                if($saleDetail->status == "noConfirm"){
+                    $showBtnPayment = false;
+                    $html .= '<td><a data-id="'.$saleDetail->id.'" class="btn btn-danger btn-delete-saledetail"><i class="far fa-trash-alt"></a></td>';
+                }else{ // status == "confirm"
+                    $html .= '<td><i class="fas fa-check-circle"></i></td>';
+                }
             $html .= '</tr>';
         }
         $html .='</tbody></table></div>';
@@ -157,6 +157,7 @@ class CashierController extends Controller
         }else{
             $html .= '<button data-id="'.$sale_id.'" class="btn btn-warning btn-block btn-confirm-order">Confirm Order</button>';
         }
+      
 
         return $html;
     }
@@ -179,7 +180,7 @@ class CashierController extends Controller
         $sale = Sale::find($sale_id);
         $sale->total_price = $sale->total_price - $menu_price;
         $sale->save();
-        // check if their any saleDetail having the sale id
+        // check if there any saledetail having the sale id 
         $saleDetails = SaleDetail::where('sale_id', $sale_id)->first();
         if($saleDetail){
             $html = $this->getSaleDetails($sale_id);
@@ -211,4 +212,6 @@ class CashierController extends Controller
         $saleDetails = SaleDetail::where('sale_id', $saleID)->get();
         return view('cashier.showReceipt')->with('sale', $sale)->with('saleDetails', $saleDetails);
     }
+
+
 }
