@@ -41,7 +41,7 @@
         <div class="input-group mb-3">
            <div class="input-group-prepend">
             <span class="input-group-text">$</span>
-           </div> 
+           </div>
            <input type="number" id="recieved-amount" class="form-control">
         </div>
         <div class="form-group">
@@ -51,7 +51,7 @@
             <option value="credit card">Credit Card</option>
           </select>
         </div>
-      
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,7 +78,7 @@ $(document).ready(function(){
         $("#table-detail").slideUp('fast');
         $("#btn-show-tables").html('View All Tables').removeClass('btn-danger').addClass('btn-primary');
       }
-      
+
   });
 
   // load menus by category
@@ -141,7 +141,6 @@ $(document).ready(function(){
   });
 
   // delete saledetail
-
   $("#order-detail").on("click", ".btn-delete-saledetail",function(){
     var saleDetailID = $(this).data("id");
     $.ajax({
@@ -156,6 +155,38 @@ $(document).ready(function(){
       }
     })
 
+  });
+
+  // increase quantity
+  $("#order-detail").on("click", ".btn-increase-quantity",function(){
+      var saleDetailID = $(this).data("id");
+      $.ajax({
+          type: "POST",
+          data: {
+              "_token" : $('meta[name="csrf-token"]').attr('content'),
+              "saleDetail_id": saleDetailID
+          },
+          url: "/cashier/increase-quantity",
+          success: function(data){
+              $("#order-detail").html(data);
+          }
+      })
+  });
+
+  // Decrease quantity
+  $("#order-detail").on("click", ".btn-decrease-quantity",function(){
+      var saleDetailID = $(this).data("id");
+      $.ajax({
+          type: "POST",
+          data: {
+              "_token" : $('meta[name="csrf-token"]').attr('content'),
+              "saleDetail_id": saleDetailID
+          },
+          url: "/cashier/decrease-quantity",
+          success: function(data){
+              $("#order-detail").html(data);
+          }
+      })
   });
 
   // when a user click on the payment button

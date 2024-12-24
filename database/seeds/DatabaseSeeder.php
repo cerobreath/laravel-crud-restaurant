@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Coca-Cola',
                 'price' => 1.50,
-                'image' => 'coke.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Refreshing Coca-Cola',
                 'category_id' => 1, // Drinks
                 'created_at' => now(),
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Sprite',
                 'price' => 1.40,
-                'image' => 'sprite.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Crisp and clear Sprite',
                 'category_id' => 1, // Drinks
                 'created_at' => now(),
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Cheeseburger',
                 'price' => 5.00,
-                'image' => 'burger.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Juicy cheeseburger with fresh lettuce and tomatoes',
                 'category_id' => 2, // Main Courses
                 'created_at' => now(),
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Chicken Alfredo',
                 'price' => 8.50,
-                'image' => 'alfredo.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Creamy chicken Alfredo pasta',
                 'category_id' => 2, // Main Courses
                 'created_at' => now(),
@@ -69,7 +69,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Brownie',
                 'price' => 3.00,
-                'image' => 'brownie.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Delicious chocolate brownie',
                 'category_id' => 3, // Desserts
                 'created_at' => now(),
@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'French Fries',
                 'price' => 2.50,
-                'image' => 'fries.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Golden and crispy French fries',
                 'category_id' => 4, // Starters
                 'created_at' => now(),
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Nachos',
                 'price' => 4.00,
-                'image' => 'nachos.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Crispy nachos with melted cheese',
                 'category_id' => 5, // Snacks
                 'created_at' => now(),
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Latte',
                 'price' => 3.50,
-                'image' => 'latte.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Rich and creamy latte coffee',
                 'category_id' => 1, // Drinks
                 'created_at' => now(),
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Ice Cream',
                 'price' => 2.50,
-                'image' => 'icecream.jpg',
+                'image' => 'noimage.png',
                 'description' => 'Vanilla ice cream with chocolate topping',
                 'category_id' => 3, // Desserts
                 'created_at' => now(),

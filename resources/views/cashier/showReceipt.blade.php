@@ -10,10 +10,10 @@
 <body>
   <div id="wrapper">
     <div id="receipt-header">
-      <h3 id="resturant-name">Resturant App Devtamin</h3>
-      <p>Address: 341 N Vakanda Ave</p>
+      <h3 id="resturant-name">Resturant App</h3>
+      <p>Address: Chernihiv, Ukraine</p>
       <p>Analpolis, MD 1234</p>
-      <p>Tel: 473-XXXX-XXXX</p>
+      <p>Tel: +380-XXXX-XXXX</p>
       <p>Reference Receipt: <strong>{{$sale->id}}</strong></p>
     </div>
     <div id="receipt-body">

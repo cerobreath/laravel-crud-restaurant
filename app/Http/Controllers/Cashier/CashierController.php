@@ -23,7 +23,7 @@ class CashierController extends Controller
         $html = '';
         foreach($tables as $table){
             $html .= '<div class="col-md-2 mb-4">';
-            $html .= 
+            $html .=
             '<button class="btn btn-primary btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
             <img class="img-fluid" src="'.url('/images/table.svg').'"/>
             <br>';
@@ -52,7 +52,7 @@ class CashierController extends Controller
                     $'.number_format($menu->price).'
                 </a>
             </div>
-            
+
             ';
         }
         return $html;
@@ -95,7 +95,7 @@ class CashierController extends Controller
         $sale->save();
 
         $html = $this->getSaleDetails($sale_id);
-        return $html; //testing 
+        return $html; //testing
     }
 
     public function getSaleDetailsByTable($table_id){
@@ -108,7 +108,7 @@ class CashierController extends Controller
             $html .= "Not Found Any Sale Details for the Selected Table";
         }
         return $html;
-        
+
     }
 
     private function getSaleDetails($sale_id){
@@ -130,12 +130,17 @@ class CashierController extends Controller
         <tbody>';
         $showBtnPayment = true;
         foreach($saleDetails as $saleDetail){
-          
+
+            $decreaseButton = '<button class="btn btn-danger btn-sm btn-decrease-quantity" disabled>-</button>';
+            if($saleDetail->quantity > 1){
+                $decreaseButton = '<button data-id="'. $saleDetail->id.'" class="btn btn-danger btn-sm btn-decrease-quantity">-</button>';
+            }
+
             $html .= '
             <tr>
                 <td>'.$saleDetail->menu_id.'</td>
                 <td>'.$saleDetail->menu_name.'</td>
-                <td>'.$saleDetail->quantity.'</td>
+                <td>'.$decreaseButton . ' ' . $saleDetail->quantity.' <button data-id="'. $saleDetail->id.'" class="btn btn-primary btn-sm btn-increase-quantity">+</button> </td>
                 <td>'.$saleDetail->menu_price.'</td>
                 <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>';
                 if($saleDetail->status == "noConfirm"){
@@ -157,7 +162,45 @@ class CashierController extends Controller
         }else{
             $html .= '<button data-id="'.$sale_id.'" class="btn btn-warning btn-block btn-confirm-order">Confirm Order</button>';
         }
-      
+
+
+        return $html;
+    }
+
+    public function increaseQuantity(Request $request)
+    {
+        $saleDetail_id = $request->saleDetail_id;
+
+        // Update quantity
+        $saleDetail = SaleDetail::where('id', $saleDetail_id)->first();
+        $saleDetail->quantity = $saleDetail->quantity + 1;
+        $saleDetail->save();
+
+        // Update total amount
+        $sale = Sale::where('id', $saleDetail->sale_id)->first();
+        $sale->total_price = $sale->total_price + $saleDetail->menu_price;
+        $sale->save();
+
+        $html = $this->getSaleDetails($saleDetail->sale_id);
+
+        return $html;
+    }
+
+    public function decreaseQuantity(Request $request)
+    {
+        $saleDetail_id = $request->saleDetail_id;
+
+        // Update quantity
+        $saleDetail = SaleDetail::where('id', $saleDetail_id)->first();
+        $saleDetail->quantity = $saleDetail->quantity - 1;
+        $saleDetail->save();
+
+        // Update total amount
+        $sale = Sale::where('id', $saleDetail->sale_id)->first();
+        $sale->total_price = $sale->total_price - $saleDetail->menu_price;
+        $sale->save();
+
+        $html = $this->getSaleDetails($saleDetail->sale_id);
 
         return $html;
     }
@@ -180,7 +223,7 @@ class CashierController extends Controller
         $sale = Sale::find($sale_id);
         $sale->total_price = $sale->total_price - $menu_price;
         $sale->save();
-        // check if there any saledetail having the sale id 
+        // check if there any saledetail having the sale id
         $saleDetails = SaleDetail::where('sale_id', $sale_id)->first();
         if($saleDetail){
             $html = $this->getSaleDetails($sale_id);
