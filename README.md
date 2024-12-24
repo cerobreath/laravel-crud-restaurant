@@ -113,11 +113,12 @@ The project follows Laravel’s MVC architecture:
 
 Add screenshots to showcase:
 
-1. **Login Page**
-2. **Dashboard**
-3. **Category Management**
-4. **Cashier Panel**
-5. **Reports Page**
+![Login Page](public/images/screenshots/Login%20Page.png)
+![Dashboard](public/images/screenshots/Dashboard.png)
+![Management+Menu](public/images/screenshots/Management+Menu.png)
+![Cashier](public/images/screenshots/Cashier.png)
+![Cheque](public/images/screenshots/Cheque.png)
+![Report](public/images/screenshots/Report.png)
 
 ## Additional Notes
 
