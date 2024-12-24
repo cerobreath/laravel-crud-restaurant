@@ -111,13 +111,22 @@ The project follows Laravel’s MVC architecture:
 
 ## Screenshots
 
-Add screenshots to showcase:
+### Login
+![Login](public/images/screenshots/Login%20Page.png)
 
-![Login Page](public/images/screenshots/Login%20Page.png)
+### Dashboard
 ![Dashboard](public/images/screenshots/Dashboard.png)
+
+### Management
 ![Management+Menu](public/images/screenshots/Management+Menu.png)
+
+### Cashier
 ![Cashier](public/images/screenshots/Cashier.png)
+
+#### Cheque
 ![Cheque](public/images/screenshots/Cheque.png)
+
+### Report
 ![Report](public/images/screenshots/Report.png)
 
 ## Additional Notes
