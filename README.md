@@ -1,5 +1,7 @@
 # Laravel CRUD Restaurant
 
+![Project-main-slide](public/images/screenshots/Project%20main%20slide.png)
+
 ## Project Overview
 
 This project, **Restaurant**, is a restaurant management CRUD application built with Laravel and MySQL. It features modules for managing menus, sales, categories, and reservations using Laravel’s MVC architecture and Eloquent ORM.
@@ -68,7 +70,7 @@ This project, **Restaurant**, is a restaurant management CRUD application built 
 
     - Ensure the Apache and MySQL modules are running in XAMPP.
     - Open phpMyAdmin ([http://localhost/phpmyadmin](http://localhost/phpmyadmin)).
-    - Create a new database named `restaurantApplication`.
+    - Create a new database named `restaurantApplication` and ensure the collation is set to `utf8_general_ci`.
 
 5. **Run Migrations:**
    Migrate the database to set up tables and relationships:
@@ -82,6 +84,12 @@ This project, **Restaurant**, is a restaurant management CRUD application built 
 
    ```bash
    php artisan db:seed
+   ```
+
+7. **Generate Application Key:**
+
+   ```bash
+   php artisan key:generate
    ```
 
 ### Run the Application
@@ -121,4 +129,3 @@ Feel free to contribute by creating issues or submitting pull requests.
 
 - [Laravel Documentation](https://laravel.com/docs)
 - [MySQL Documentation](https://dev.mysql.com/doc/)
-
