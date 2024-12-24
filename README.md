@@ -137,5 +137,20 @@ Feel free to contribute by creating issues or submitting pull requests.
 
 ## References
 
-- [Laravel Documentation](https://laravel.com/docs)
-- [MySQL Documentation](https://dev.mysql.com/doc/)
+1. [Laravel - The PHP Framework For Web Artisans](https://laravel.com/) (Accessed: 23.12.2024).
+2. [MySQL](https://www.mysql.com/) (Accessed: 23.12.2024).
+3. [Database: Migrations](https://laravel.com/docs/11.x/migrations) (Accessed: 23.12.2024).
+4. [Introduction to Laravel and MVC Framework](https://www.geeksforgeeks.org/introduction-to-laravel-and-mvc-framework/) (Accessed: 23.12.2024).
+5. [Controllers](https://laravel.com/docs/11.x/controllers#main-content) (Accessed: 23.12.2024).
+6. [Eloquent: Getting Started](https://laravel.com/docs/11.x/eloquent) (Accessed: 23.12.2024).
+7. [Views](https://laravel.com/docs/11.x/views#main-content) (Accessed: 23.12.2024).
+8. [Routing](https://laravel.com/docs/11.x/routing) (Accessed: 23.12.2024).
+9. [Laravel vs Spring Boot – Which framework should be chosen to build a web application?](https://www.mageplaza.com/insights/laravel-vs-spring.html) (Accessed: 23.12.2024).
+10. [Spring vs Laravel](https://medium.com/@audruis/spring-vs-laravel-1af76c35d855) (Accessed: 23.12.2024).
+11. [Laravel vs Spring Boot: Top Differences](https://www.geeksforgeeks.org/laravel-vs-spring-boot/) (Accessed: 23.12.2024).
+12. [Is Java Spring Boot or PHP Laravel better for a web project with ambition to make it larger and larger in the future?](https://www.quora.com/Is-Java-Spring-Boot-or-PHP-Laravel-better-for-a-web-project-with-ambition-to-make-it-larger-and-larger-in-the-future) (Accessed: 23.12.2024).
+13. [Font Awesome Docs](https://docs.fontawesome.com/) (Accessed: 24.12.2024).
+14. [Vector Icons and Stickers - PNG, SVG, EPS, PSD](https://www.flaticon.com/) (Accessed: 24.12.2024).
+15. [Bootstrap File upload / file input - free examples & tutorial](https://mdbootstrap.com/docs/standard/forms/file/) (Accessed: 24.12.2024).
+16. [The most popular HTML, CSS, and JS library in the world](https://getbootstrap.com/) (Accessed: 24.12.2024).
+17. [cerobreath/laravel-crud-restaurant](https://github.com/cerobreath/laravel-crud-restaurant) (Accessed: 23.12.2024).
