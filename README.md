@@ -148,3 +148,6 @@ Feel free to contribute by creating issues or submitting pull requests.
 9. [Vector Icons and Stickers - PNG, SVG, EPS, PSD](https://www.flaticon.com/) (Accessed: 24.12.2024).
 10. [Bootstrap File upload / file input - free examples & tutorial](https://mdbootstrap.com/docs/standard/forms/file/) (Accessed: 24.12.2024).
 11. [The most popular HTML, CSS, and JS library in the world](https://getbootstrap.com/) (Accessed: 24.12.2024).
+
+## Contacts Slide
+![Contacts Slide](public/images/screenshots/contacts-slide.png)
